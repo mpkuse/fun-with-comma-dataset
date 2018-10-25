@@ -16,7 +16,7 @@ non-commercial purpose.
 - numpy
 
 ## Video
-[Video]( https://youtu.be/LzXRh2Pe740 )
+![Video](https://youtu.be/LzXRh2Pe740)
 
 
 ## Training
@@ -32,4 +32,4 @@ python test.py
 ```
 
 ## Details
-![Model][images/model.png]
+![Model](images/model.png)
