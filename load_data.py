@@ -66,6 +66,7 @@ def get_flist(COMMA_PATH):
         f_log = '/'.join( spl )
         log_files.append( f_log )
     print 'n_files = ', len(cam_files )
+    assert( len(cam_files) > 0 )
     return cam_files, log_files
 
 class KerasBatchGenerator( keras.utils.Sequence ):
@@ -84,7 +85,10 @@ class KerasBatchGenerator( keras.utils.Sequence ):
         self.t_step = 60
         self.epochs = 0
 
-        self.X, self.speeds = associate_camptr__to__speed( cam_files[self.epochs], log_files[self.epochs] )
+        self.cam_files = cam_files
+        self.log_files = log_files
+
+        self.X, self.speeds = associate_camptr__to__speed( cam_files[0], log_files[0] )
 
 
     def __len__(self):
@@ -116,16 +120,27 @@ class KerasBatchGenerator( keras.utils.Sequence ):
         # Every epoch change file
         self.epochs += 1
 
-        print 'epochs=', self.epochs, '\t so load next dataset'
-        self.X, self.speeds = associate_camptr__to__speed( cam_files[self.epochs%len(cam_files)], log_files[self.epochs%len(cam_files)] )
-
-
-
+        # print 'epochs=', self.epochs, '\t so load next dataset'
+        # self.X, self.speeds = associate_camptr__to__speed(  self.cam_files[   self.epochs%len(self.cam_files)   ], \
+                                                            # self.log_files[   self.epochs%len(self.cam_files)   ] )
 
 
 
 
 if __name__ == '__main__':
+
+    gen = KerasBatchGenerator(COMMA_PATH='/Bulk_Data/cv_datasets/comma/comma-dataset/')
+    for i in range(10):
+        l = len( gen )
+        print 'l=', l
+        a,b = gen[0]
+        print a.shape, b.shape
+        a,b = gen[l-1]
+        gen.on_epoch_end()
+
+
+
+if __name__ == '__1main__':
     gen = KerasBatchGenerator(COMMA_PATH='/Bulk_Data/cv_datasets/comma/comma-dataset/')
 
 if __name__ == '__1main__':
