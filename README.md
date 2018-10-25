@@ -32,4 +32,4 @@ python test.py
 ```
 
 ## Details
-[Model][images/model.png]
+![Model][images/model.png]
