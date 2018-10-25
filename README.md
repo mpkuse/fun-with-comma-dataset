@@ -16,7 +16,8 @@ non-commercial purpose.
 - numpy
 
 ## Video
-![Video](https://youtu.be/LzXRh2Pe740)
+[![Speed Prediction](images/youtube-video.jpg)](https://youtu.be/LzXRh2Pe740)
+
 
 
 ## Training
