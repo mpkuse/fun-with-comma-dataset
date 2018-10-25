@@ -16,6 +16,7 @@ non-commercial purpose.
 - numpy
 
 ## Video
+Click on the thumbnail to see the test video. 
 [![Speed Prediction](images/youtube-video.jpg)](https://youtu.be/LzXRh2Pe740)
 
 
